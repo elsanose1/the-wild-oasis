@@ -3,26 +3,14 @@ import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
-import { useSignup } from "./useSignUp";
 import SpinnerMini from "../../ui/SpinnerMini";
 import toast from "react-hot-toast";
 
-// Email regex: /\S+@\S+\.\S+/
-
 function SignupForm() {
-  const { register, formState, getValues, handleSubmit, reset } = useForm();
-  const { signup, isLoading } = useSignup();
+  const { register, formState, getValues, handleSubmit } = useForm();
   const { errors } = formState;
-
+  const isLoading = false;
   function submitHandler({ fullName, email, password }) {
-    // signup(
-    //   { fullName, password, email },
-    //   {
-    //     onSuccess: () => {
-    //       reset();
-    //     },
-    //   }
-    // );
     toast.error("Can't do this");
   }
   return (
