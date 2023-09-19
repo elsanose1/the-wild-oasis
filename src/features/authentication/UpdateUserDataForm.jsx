@@ -9,6 +9,7 @@ import Input from "../../ui/Input";
 import { useUser } from "./useUser";
 import { useUpdateUser } from "./useUpdateUser";
 import SpinnerMini from "../../ui/SpinnerMini";
+import toast from "react-hot-toast";
 
 function UpdateUserDataForm() {
   // We don't need the loading state, and can immediately use the user data, because we know that it has already been loaded at this point
@@ -27,15 +28,16 @@ function UpdateUserDataForm() {
     e.preventDefault();
 
     if (fullName)
-      updateUser(
-        { fullName, avatar },
-        {
-          onSuccess: () => {
-            setAvatar(null);
-            e.target.reset();
-          },
-        }
-      );
+      // updateUser(
+      //   { fullName, avatar },
+      //   {
+      //     onSuccess: () => {
+      //       setAvatar(null);
+      //       e.target.reset();
+      //     },
+      //   }
+      // );
+      toast.error("Can't do this");
   }
 
   function handleReset() {

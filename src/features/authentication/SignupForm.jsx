@@ -5,6 +5,7 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { useSignup } from "./useSignUp";
 import SpinnerMini from "../../ui/SpinnerMini";
+import toast from "react-hot-toast";
 
 // Email regex: /\S+@\S+\.\S+/
 
@@ -14,14 +15,15 @@ function SignupForm() {
   const { errors } = formState;
 
   function submitHandler({ fullName, email, password }) {
-    signup(
-      { fullName, password, email },
-      {
-        onSuccess: () => {
-          reset();
-        },
-      }
-    );
+    // signup(
+    //   { fullName, password, email },
+    //   {
+    //     onSuccess: () => {
+    //       reset();
+    //     },
+    //   }
+    // );
+    toast.error("Can't do this");
   }
   return (
     <Form onSubmit={handleSubmit(submitHandler)}>
